@@ -8,6 +8,12 @@ module.exports = {
 	entry: {
 		bundle: ['./src/main.js']
 	},
+	devServer: {
+		proxy: [{
+			context: ['/api'],
+			target: 'http://localhost:3000'
+		}]
+	},
 	resolve: {
 		alias: {
 			svelte: path.resolve('node_modules', 'svelte')
