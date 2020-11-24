@@ -6,8 +6,15 @@ name = "pypi"
 [packages]
 flask = "*"
 flask-cors = "*"
+flask-restful = "*"
+flask-marshmallow = "*"
+flask-sqlalchemy = "*"
+requests = "*"
+bandit = "*"
+marshmallow-sqlalchemy = "*"
 
 [dev-packages]
+yapf = "*"
 
 [requires]
 python_version = "3.8"

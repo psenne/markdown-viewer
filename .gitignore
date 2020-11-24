@@ -3,4 +3,3 @@
 **/public/bundle.*
 **/package-lock.json
 yarn.lock
-Pipfile.lock

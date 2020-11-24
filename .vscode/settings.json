@@ -1,0 +1,7 @@
+{
+    "python.pythonPath": "/home/mjparker78/.local/share/virtualenvs/markdown-viewer-AL6LDCPK/bin/python",
+    "python.linting.banditEnabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.enabled": true,
+    "python.formatting.provider": "yapf"
+}
