@@ -5,28 +5,32 @@ from flask_restful import Resource
 from flask_cors import CORS, cross_origin
 
 
+# @app.route('/')
+class Home(Resource):
+    def get(self):
+        return send_from_directory(app.static_folder, 'index.html')
+
+
+# @app.route("/<path:path>", methods=['GET'])
+class StaticFiles(Resource):
+    def get(self, contents):
+        print("contents",contents)
+        return send_from_directory(app.static_folder, contents)
+
+
 class GetDocuments(Resource):
     def get(self):
         documents = Documents.query.all()
         return [Documents.serialize(document) for document in documents]
 
 
+
 api.add_resource(GetDocuments, '/api/documents')
+api.add_resource(StaticFiles, '/<path:path>')
+api.add_resource(Home, '/')
 
 
-@app.route('/')
-def serve():
-    return send_from_directory(app.static_folder, 'index.html')
 
-
-@app.route("/images/<path:path>", methods=['GET'])
-def images(path):
-    return send_from_directory('images', path)
-
-
-@app.route("/<path:path>", methods=['GET'])
-def home(path):
-    return send_from_directory('../client/public', path)
 
 
 # @app.route('/api/', methods=['GET'])

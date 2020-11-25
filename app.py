@@ -11,7 +11,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 api = Api(app)
 ma = Marshmallow(app)
-settings = app.config
 db = SQLAlchemy(app)
 
 from server.routes import *
