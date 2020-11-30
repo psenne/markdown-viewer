@@ -3,3 +3,4 @@
 **/public/bundle.*
 **/package-lock.json
 yarn.lock
+**/*.pyc

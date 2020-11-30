@@ -14,6 +14,7 @@ ma = Marshmallow(app)
 db = SQLAlchemy(app)
 
 from server.routes import *
+from server.models import *
 
 
 @click.group()
@@ -29,6 +30,8 @@ def serve(port, debug):
 
 @cli.command()
 def initdb():
+    click.echo('Deleting the database')
+    db.drop_all()
     click.echo('Creating the database')
     db.create_all()
     db.init_app(app)
