@@ -1,11 +1,9 @@
 <script>
-	export let name;
+	import Router from 'svelte-spa-router'
+	import {routes} from './routes.js'
 </script>
 
-<style>
-	h1 {
-		color: purple;
-	}
-</style>
 
-<h1>Hello {name}!</h1>
+<h1>Markdown viewer</h1>
+<h2>Save and share markdown documents</h2>
+<Router {routes} />
